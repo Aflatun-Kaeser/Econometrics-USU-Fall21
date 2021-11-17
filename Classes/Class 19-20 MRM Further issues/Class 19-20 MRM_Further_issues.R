@@ -43,7 +43,7 @@ plot(effect("rooms", MRM))
 
 
 
-###############################################################################
+ ###############################################################################
 # Using interactions 
 MRM <-lm(stndfnl~ atndrte+ priGPA + ACT 
          + I(priGPA^2) + I(ACT^2)
@@ -71,4 +71,6 @@ predict(MRM, newdata =   xvalues, interval = "prediction", level = 0.95)
 
 
 ##############################################################################
-
+reg     <- lm(log(wage)~educ + educ:exper,wage1)
+stargazer(reg)
+summary(reg)
